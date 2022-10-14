@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+export interface ImageState {
+  preview: null
+  imageArr: string[]
+}
+
+const initialState: ImageState = {
   preview: null,
   imageArr: [],
 }
