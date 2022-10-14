@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.label`
   border: 1px solid #f0f0f0;
   border-radius: 8px;
   width: 120px;

@@ -27,6 +27,7 @@ const Step1 = () => {
           <ImageBox key={i} image={img} /> // TODOS: 아이디 지정하고 key 값 바꾸기
         )
       })}
+      <ImageBox />
       {/* </HorizontalWrapper> */}
     </SellPage>
   )

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const HorizontalWrapper = () => {
-  return <div>HorizontalWrapper</div>
+  return <div></div>
 }
 
 export default HorizontalWrapper
