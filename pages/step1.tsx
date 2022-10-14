@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { SellPage, StarStyled } from '@styles/Styles'
 import ImageBox from '@components/ImageBox/ImageBox'
 import SelectBox from '@components/SelectBox/SelectBox'
+import HorizontalWrapper from '@components/HorizontalWrapper/HorizontalWrapper'
+import { ImageType } from '@redux/image'
 
 /**
  * 판매하기 페이지
@@ -20,15 +22,14 @@ const Step1 = () => {
         제품 사진 <StarStyled>*</StarStyled>
       </span>
 
-      <SelectBox length={image.imageArr.length} />
-      {/* <HorizontalWrapper> */}
-      {image.imageArr.map((img, i) => {
-        return (
-          <ImageBox key={i} image={img} /> // TODOS: 아이디 지정하고 key 값 바꾸기
-        )
-      })}
-      <ImageBox />
-      {/* </HorizontalWrapper> */}
+      <div className="horizontal">
+        <SelectBox length={image.imageArr.length} />
+        <HorizontalWrapper>
+          {image.imageArr.map((img: ImageType) => (
+            <ImageBox key={img.id} image={img} />
+          ))}
+        </HorizontalWrapper>
+      </div>
     </SellPage>
   )
 }

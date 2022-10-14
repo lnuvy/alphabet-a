@@ -1,3 +1,4 @@
+import Toast from '@components/Toast/Toast'
 import { upload } from '@redux/image'
 import { RootState } from '@redux/store'
 import Image from 'next/image'
@@ -23,10 +24,10 @@ const SelectBox: React.FC<Props> = ({ length }) => {
     const curFileCnt = files.length
     const remainFileCnt = maxFileCnt - attFileCnt
 
-    console.log(remainFileCnt)
+    // console.log(remainFileCnt)
 
     if (curFileCnt > remainFileCnt) {
-      alert('사진은 최대 10장까지 업로드 가능합니다.')
+      Toast('error', '사진은 최대 10장까지 업로드 가능합니다.')
       return
     }
 
@@ -51,8 +52,7 @@ const SelectBox: React.FC<Props> = ({ length }) => {
       }
     }
 
-    if (check > 0) alert('사진형식이 아닌 파일은 제외되었습니다.')
-    console.log(check)
+    if (check > 0) Toast('info', '사진형식이 아닌 파일은 제외되었습니다.')
   }
 
   return (

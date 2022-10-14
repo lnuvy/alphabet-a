@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 
-const HorizontalWrapper = () => {
-  return <div></div>
+interface Props {
+  children: React.ReactNode
+}
+const HorizontalWrapper: React.FC<Props> = ({ children }) => {
+  return <div>{children}</div>
 }
 
 export default HorizontalWrapper
