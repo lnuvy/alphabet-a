@@ -30,7 +30,7 @@ const Step1 = () => {
 
   console.log(isLoading)
 
-  if (isLoading) return <LoadingScreen />
+  if (!isLoading) return <LoadingScreen />
 
   return (
     <SellPage>

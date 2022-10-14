@@ -5,7 +5,7 @@ import React from 'react'
 const LoadingScreen = () => {
   return (
     <LoadingWraper>
-      <Image src="/200w.gif" width={100} height={100} alt="loading" />
+      <Image src="/200w.gif" width={150} height={150} alt="loading" />
     </LoadingWraper>
   )
 }
