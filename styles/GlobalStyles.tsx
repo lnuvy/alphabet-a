@@ -1,5 +1,5 @@
-import React from "react";
-import { Global, css } from "@emotion/react";
+import React from 'react'
+import { Global, css } from '@emotion/react'
 
 const GlobalStyles = () => {
   const styles = css`
@@ -19,16 +19,15 @@ const GlobalStyles = () => {
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
     }
-    .global {
-      width: 520px;
-      min-height: 100vh;
-      padding: 100px 104px 0 100px;
-      margin: 0 auto;
-    }
-    .title-global {
-      width: 100vw;
+
+    .view-screen {
+      min-width: 375px;
+      max-width: 438px;
       height: 100vh;
+      margin: 0 auto;
+      background-color: #fff;
     }
+
     .flex-s {
       display: flex;
       justify-content: start;
@@ -67,9 +66,9 @@ const GlobalStyles = () => {
       justify-content: center;
       align-items: end;
     }
-  `;
+  `
 
-  return <Global styles={styles} />;
-};
+  return <Global styles={styles} />
+}
 
-export default GlobalStyles;
+export default GlobalStyles

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Step1 = () => {
-  return <div></div>;
-};
+  return <div></div>
+}
 
-export default Step1;
+export default Step1
