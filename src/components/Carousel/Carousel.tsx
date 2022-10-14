@@ -6,7 +6,6 @@ import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { OnlySrcProps } from '@typing/redux/imageType'
-import { usePreviewImage } from 'src/hooks/usePreviewImage'
 import SelectBox from '@components/SelectBox/SelectBox'
 
 interface Props {
@@ -19,10 +18,9 @@ const settings = {
   speed: 500,
   autoplay: false,
   autoplaySpeed: 2000,
-  slidesToShow: 1, // 한페이지에 보이는 객체 수
+  slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
-  // centerMode: false,
   centerPadding: '0',
   appendDots: (dots: any) => (
     <div
@@ -40,8 +38,6 @@ const settings = {
 }
 
 const Carousel: React.FC<Props> = ({ imageArr }) => {
-  const { selectFile } = usePreviewImage()
-
   return (
     <StyledSlider {...settings}>
       {imageArr.map((img) => {

@@ -7,7 +7,8 @@ interface Props {
 export const Wrapper = styled.label<Props>`
   cursor: pointer;
   border: 1px solid #f0f0f0;
-  ${({ small }) => (small ? 'border-radius: 8px; width: 120px; height: 120px;' : 'width: 100%; height: 50vh;')}
+  ${({ small }) =>
+    small ? 'border-radius: 8px; width: 120px; height: 120px;' : 'width: 100%; height: 50vh; margin-top: 5rem;'}
   background-color: #fafafa;
 
   display: flex;

@@ -20,7 +20,8 @@
       "@styles/*": ["./styles/*"],
       "@components/*": ["src/components/*"],
       "@typing/*": ["src/typing/*"],
-      "@redux/*": ["src/redux/*"]
+      "@redux/*": ["src/redux/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
 
