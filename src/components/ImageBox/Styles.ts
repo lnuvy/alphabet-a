@@ -9,4 +9,10 @@ export const Wrapper = styled.div<OnlySrcProps>`
   background-color: #fafafa;
 
   ${({ src }) => src && `background-image: url(${src}); background-size: cover;`};
+
+  & > span {
+    position: relative;
+    top: 70px;
+    left: 94px;
+  }
 `

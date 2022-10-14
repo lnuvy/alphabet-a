@@ -5,3 +5,7 @@ export interface OnlySrcProps {
 export interface LengthProps {
   length: number
 }
+
+export interface OnClickProps {
+  onClick: () => void
+}

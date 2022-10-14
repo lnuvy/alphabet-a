@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import Slider from 'react-slick'
 import styled from '@emotion/styled'
-import { ImageType } from '@redux/image'
+import { ImageType, taggedImage } from '@redux/image'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { OnlySrcProps } from '@typing/Types'
 import SelectBox from '@components/SelectBox/SelectBox'
+import { useDispatch } from 'react-redux'
+import TagButton from '@components/TagButton'
 
 interface Props {
   imageArr: ImageType[]
@@ -38,10 +40,24 @@ const settings = {
 }
 
 const Carousel: React.FC<Props> = ({ imageArr }) => {
+  const dispatch = useDispatch()
+
+  const onClickTag = useCallback(
+    (image: ImageType, index: number) => {
+      const { id } = image
+      dispatch(taggedImage({ id, index }))
+    },
+    [imageArr],
+  )
+
   return (
     <StyledSlider {...settings}>
-      {imageArr.map((img) => {
-        return <ImageDiv className="background-setting" key={img.id} src={img.src} />
+      {imageArr.map((img, i) => {
+        return (
+          <ImageDiv className="background-setting" key={img.id} src={img.src}>
+            <TagButton onClick={() => onClickTag(img, i)} isTagged={img.isTagged} />
+          </ImageDiv>
+        )
       })}
 
       <SelectBox>
@@ -66,24 +82,6 @@ const StyledSlider = styled(Slider)`
     height: 10px;
   }
 `
-
-const AddImageScreen = styled.div`
-  cursor: pointer;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-top: 5rem;
-
-  background-color: #fafafa;
-
-  & .image-length {
-    color: #777777;
-    font-size: 0.7rem;
-    margin-top: 4px;
-  }
-`
-
 const ImageDiv = styled.div<OnlySrcProps>`
   display: flex;
   flex-direction: column;
