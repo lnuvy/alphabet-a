@@ -1,8 +1,13 @@
 import styled from '@emotion/styled'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter()
+
+  const onClickMoveStep1 = () => router.replace('/step1')
+
   return (
     <div>
       <Head>
@@ -41,7 +46,7 @@ const Home: NextPage = () => {
         </span>
       </OtherWords>
 
-      <div className="card-desc">
+      <div className="card-desc" onClick={onClickMoveStep1}>
         <h2>step1 으로 이동하기 &rarr;</h2>
       </div>
     </div>

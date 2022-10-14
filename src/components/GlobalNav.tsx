@@ -2,15 +2,19 @@ import React, { useCallback } from 'react'
 import { GlobalNavBar } from '@styles/Styles'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { useDispatch } from 'react-redux'
+import { loadingChange } from '@redux/image'
 
 interface Props {
   title: string
 }
 
 const GlobalNav: React.FC<Props> = ({ title }) => {
+  const dispatch = useDispatch()
   const router = useRouter()
 
   const onClickNext = useCallback(() => {
+    dispatch(loadingChange(false))
     router.push('/step1').then()
   }, [])
 
