@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@redux/store'
 import { useRouter } from 'next/router'
 import { loadingChange } from '@redux/image'
+import Head from 'next/head'
 
 /**
  * 제품 태그하기 페이지
@@ -26,9 +27,17 @@ const Step2 = () => {
   }, [])
 
   return (
-    <TagPage>
-      <Carousel imageArr={image.imageArr} />
-    </TagPage>
+    <>
+      <Head>
+        <title>제품 태그하기 | 알파벳에이(ffeed) 코딩테스트</title>
+        <meta name="제품 태그하기" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <TagPage>
+        <Carousel imageArr={image.imageArr} />
+      </TagPage>
+    </>
   )
 }
 

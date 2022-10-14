@@ -7,6 +7,7 @@ import HorizontalWrapper from '@components/HorizontalWrapper/HorizontalWrapper'
 import { ImageType } from '@redux/image'
 import LoadingScreen from '@components/LoadingScreen'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 /**
  * 판매하기 페이지
@@ -30,17 +31,25 @@ const Step1 = () => {
   if (isLoading) return <LoadingScreen />
 
   return (
-    <SellPage>
-      <span>
-        제품 사진 <StarStyled>*</StarStyled>
-      </span>
+    <>
+      <Head>
+        <title>판매하기 | 알파벳에이(ffeed) 코딩테스트</title>
+        <meta name="판매하기" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-      <HorizontalWrapper>
-        {imageArr.map((img: ImageType) => (
-          <ImageBox key={img.id} image={img} />
-        ))}
-      </HorizontalWrapper>
-    </SellPage>
+      <SellPage>
+        <span>
+          제품 사진 <StarStyled>*</StarStyled>
+        </span>
+
+        <HorizontalWrapper>
+          {imageArr.map((img: ImageType) => (
+            <ImageBox key={img.id} image={img} />
+          ))}
+        </HorizontalWrapper>
+      </SellPage>
+    </>
   )
 }
 

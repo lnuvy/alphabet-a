@@ -11,10 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  console.log(router.pathname)
-
   const [title, setTitle] = useState('Home')
-
   useEffect(() => {
     getTitle(router.pathname)
   }, [router.pathname])

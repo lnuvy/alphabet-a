@@ -23,7 +23,7 @@ const ButtonStyle = styled.button<Props>`
   border: none;
   outline: none;
   border-radius: 100px;
-  padding: 10px 12px;
+  padding: 10px 12px 8px;
   font-size: 0.7rem;
   vertical-align: bottom;
 

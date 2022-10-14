@@ -54,7 +54,7 @@ const Carousel: React.FC<Props> = ({ imageArr }) => {
     <StyledSlider {...settings}>
       {imageArr.map((img, i) => {
         return (
-          <ImageDiv className="background-setting" key={img.id} src={img.src}>
+          <ImageDiv key={img.id} src={img.src}>
             <TagButton onClick={() => onClickTag(img, i)} isTagged={img.isTagged} />
           </ImageDiv>
         )
@@ -88,8 +88,9 @@ const ImageDiv = styled.div<OnlySrcProps>`
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  width: 100%;
+  width: 400px;
   min-height: 50vh;
+  height: 400px;
 
   background-image: url(${({ src }) => src});
   background-size: cover;

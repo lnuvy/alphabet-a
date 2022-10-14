@@ -28,43 +28,35 @@ const GlobalStyles = () => {
       background-color: #fff;
     }
 
-    .flex-s {
-      display: flex;
-      justify-content: start;
-      align-items: center;
+    .card-desc {
+      cursor: pointer;
+      margin: 1rem;
+      padding: 1.5rem;
+      text-align: left;
+      color: inherit;
+      text-decoration: none;
+      border: 1px solid #eaeaea;
+      border-radius: 10px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      vertical-align: middle;
     }
-    .flex-c {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    .card-desc:hover,
+    .card-desc:focus,
+    .card-desc:active {
+      color: #0070f3;
+      border-color: #0070f3;
     }
-    .flex-sb {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    .card-desc h2 {
+      margin: 0;
+      font-size: 1.5rem;
     }
-    .flex-e {
-      display: flex;
-      justify-content: end;
-      align-items: center;
-    }
-    .flex-c-s {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: start;
-    }
-    .flex-c-c {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .flex-c-e {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: end;
+
+    .card-desc p {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.5;
     }
   `
 

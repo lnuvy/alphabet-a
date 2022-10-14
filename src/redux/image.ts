@@ -39,8 +39,6 @@ const imageSlice = createSlice({
 
     // 태그 토글, 리소스를 아끼기 위해 find, filter 등을 사용하지 않고 인덱스가 일치할때 태그 토글
     taggedImage: (state, action) => {
-      console.log(action.payload)
-
       const { index, id } = action.payload
       if (state.imageArr[index].id === id) {
         state.imageArr[index].isTagged = !state.imageArr[index].isTagged
