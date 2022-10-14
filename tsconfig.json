@@ -15,10 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
-
     "paths": {
-      "@pages/*": ["/pages/*"],
-      "@styles/*": ["/styles/*"],
+      "@pages/*": ["./pages/*"],
+      "@styles/*": ["./styles/*"],
       "@components/*": ["src/components/*"],
       "@typing/*": ["src/typing/*"],
       "@redux/*": ["src/redux/*"]
