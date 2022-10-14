@@ -39,8 +39,8 @@ const ButtonStyle = styled.button`
   cursor: pointer;
   padding: 1px;
   position: relative;
-  top: -55px;
-  right: -55px;
+  top: -10px;
+  left: 100px;
   background-color: black;
   width: 24px;
   height: 24px;

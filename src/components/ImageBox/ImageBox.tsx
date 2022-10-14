@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
-import { Wrapper } from '@components/SelectBox/Styles'
 import Close from '@components/Close'
 import { ImageType, removePreview } from '@redux/image'
 import { useDispatch } from 'react-redux'
+import { Wrapper } from './Styles'
 
 const ImageBox = ({ image }: { image: ImageType }) => {
   const dispatch = useDispatch()
@@ -12,7 +12,7 @@ const ImageBox = ({ image }: { image: ImageType }) => {
   }, [image])
 
   return (
-    <Wrapper style={{ flexDirection: 'row' }} src={image.src}>
+    <Wrapper src={image.src}>
       <Close onClick={onClickDelete} />
     </Wrapper>
   )

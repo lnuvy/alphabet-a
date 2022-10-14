@@ -2,7 +2,8 @@ import Toast from '@components/Toast/Toast'
 import { upload } from '@redux/image'
 import { RootState } from '@redux/store'
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Wrapper } from './Styles'
 
@@ -15,8 +16,20 @@ const fileTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp', 'image/t
 
 const SelectBox: React.FC<Props> = ({ length }) => {
   const dispatch = useDispatch()
-  // const fileInput = useRef()
+  const router = useRouter()
   const image = useSelector((state: RootState) => state.image)
+
+  const [prevLength, setPrevLength] = useState(image.imageArr.length)
+
+  // useEffect(() => {
+  //   const len = image.imageArr.length
+
+  //   if (prevLength !== len) {
+  //     router.push('/step2').then(() => {
+  //       setPrevLength(len)
+  //     })
+  //   }
+  // }, [image.imageArr.length])
 
   const selectFile = (e) => {
     const { files } = e.target
@@ -35,19 +48,14 @@ const SelectBox: React.FC<Props> = ({ length }) => {
     for (let i = 0; i < Math.min(curFileCnt, remainFileCnt); i++) {
       const file = files[i]
       if (!fileTypes.includes(file.type)) {
-        console.log(file.type)
-
         check++
         continue
       }
-      console.log(file)
 
-      // dispatch(upload(file));
       const reader = new FileReader()
       reader.readAsDataURL(file)
       reader.onloadend = () => {
         console.log(reader.result)
-
         dispatch(upload(reader.result))
       }
     }

@@ -33,13 +33,6 @@ export const GlobalNavBar = styled.div`
 export const SellPage = styled.div`
   padding: 0 1rem;
   margin-top: 5rem;
-
-  & > .horizontal {
-    padding: 0.8rem 0;
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-  }
   /* & > .sell-text {
     margin-bottom: 0.5rem;
   } */
@@ -54,7 +47,9 @@ export const StarStyled = styled.span`
 
 export const TagPage = styled.div`
   padding: 0.2rem;
+
   & > .image-box {
+    background-color: #fafafa;
     display: flex;
     flex-direction: column;
     justify-content: center;
