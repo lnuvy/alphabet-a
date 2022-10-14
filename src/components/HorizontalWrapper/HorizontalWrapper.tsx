@@ -21,8 +21,8 @@ const HorizontalWrapper: React.FC<Props> = ({ children }) => {
       ref={ref}
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseLeave}
       onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseLeave}
     >
       <div className="sticky-position">
         <SelectBox length={length} />
@@ -40,9 +40,10 @@ const Wrapper = styled.div<StyleProps>`
   width: 100%;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(${({ length }) => length + 1}, 1fr);
+  justify-content: start;
+  grid-template-columns: repeat(${({ length }) => length + 1}, 120px);
   column-gap: 10px;
-  overflow: auto;
+  overflow: hidden;
 
   & > .sticky-position {
     position: sticky;

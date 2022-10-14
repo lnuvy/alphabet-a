@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from 'react'
 
-export const useMouseDrag = (ref: RefObject<HTMLElement>) => {
+export const useMouseDrag = (ref: RefObject<HTMLDivElement>) => {
   const [isDown, setIsDown] = useState(false)
 
   const [startX, setStartX] = useState(0)
