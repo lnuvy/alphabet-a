@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootState } from '@redux/store'
 import { SellPage, StarStyled } from '@styles/Styles'
 import ImageBox from '@components/ImageBox/ImageBox'
 import HorizontalWrapper from '@components/HorizontalWrapper/HorizontalWrapper'
-import { ImageType, loadingChange } from '@redux/image'
-import { usePreviewImage } from '@hooks/usePreviewImage'
+import { ImageType } from '@redux/image'
 import LoadingScreen from '@components/LoadingScreen'
 import { useRouter } from 'next/router'
 
@@ -28,9 +27,7 @@ const Step1 = () => {
     }
   }, [imageArr.length])
 
-  console.log(isLoading)
-
-  if (!isLoading) return <LoadingScreen />
+  if (isLoading) return <LoadingScreen />
 
   return (
     <SellPage>

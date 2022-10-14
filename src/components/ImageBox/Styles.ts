@@ -1,10 +1,7 @@
 import styled from '@emotion/styled'
+import { OnlySrcProps } from '@typing/Types'
 
-interface ImageProps {
-  src?: string
-}
-
-export const Wrapper = styled.div<ImageProps>`
+export const Wrapper = styled.div<OnlySrcProps>`
   border: 1px solid #f0f0f0;
   border-radius: 8px;
   width: 120px;

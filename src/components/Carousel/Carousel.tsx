@@ -5,7 +5,7 @@ import { ImageType } from '@redux/image'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { OnlySrcProps } from '@typing/redux/imageType'
+import { OnlySrcProps } from '@typing/Types'
 import SelectBox from '@components/SelectBox/SelectBox'
 
 interface Props {

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export interface ImageType {
   id: number
   src: string
+  isTagged: boolean
 }
 export interface ImageState {
   isLoading: boolean
@@ -21,7 +22,7 @@ const imageSlice = createSlice({
     // input 통해 추가 시 id 고유값 지정 후 리덕스 주입
     upload: (state, action) => {
       const id = new Date().getTime()
-      state.imageArr.push({ id, src: action.payload })
+      state.imageArr.push({ id, src: action.payload, isTagged: false })
     },
 
     // x 버튼 클릭

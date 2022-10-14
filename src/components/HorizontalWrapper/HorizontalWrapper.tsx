@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
-import styled from '@emotion/styled'
+import React, { useRef } from 'react'
 import SelectBox from '@components/SelectBox/SelectBox'
 import { useSelector } from 'react-redux'
 import { RootState } from '@redux/store'
 import { useMouseDrag } from 'src/hooks/useMouseDrag'
 import Image from 'next/image'
+import { Wrapper } from './Styles'
 
 interface Props {
   children: React.ReactNode
@@ -13,7 +13,7 @@ interface Props {
 const HorizontalWrapper: React.FC<Props> = ({ children }) => {
   const image = useSelector((state: RootState) => state.image)
   const length = image.imageArr.length
-  const ref = useRef<null | HTMLDivElement>()
+  const ref = useRef<null | HTMLDivElement>(null)
   const { handleMouseDown, handleMouseLeave, handleMouseMove } = useMouseDrag(ref)
 
   return (
@@ -38,25 +38,4 @@ const HorizontalWrapper: React.FC<Props> = ({ children }) => {
   )
 }
 
-interface StyleProps {
-  length: number
-}
-
-const Wrapper = styled.div<StyleProps>`
-  width: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: start;
-  grid-template-columns: repeat(${({ length }) => length + 1}, 120px);
-  column-gap: 10px;
-  overflow: hidden;
-
-  & > .sticky-position {
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    padding: 12px 0;
-    background-color: #fff;
-  }
-`
 export default HorizontalWrapper
