@@ -4,6 +4,7 @@ import SelectBox from '@components/SelectBox/SelectBox'
 import { useSelector } from 'react-redux'
 import { RootState } from '@redux/store'
 import { useMouseDrag } from 'src/hooks/useMouseDrag'
+import Image from 'next/image'
 
 interface Props {
   children: React.ReactNode
@@ -25,7 +26,12 @@ const HorizontalWrapper: React.FC<Props> = ({ children }) => {
       onMouseUp={handleMouseLeave}
     >
       <div className="sticky-position">
-        <SelectBox length={length} />
+        <SelectBox small>
+          <Image src="/camera.svg" width={20} height={20} alt="mini" />
+          <div className="image-length-info">
+            <b>{length}</b> · 10
+          </div>
+        </SelectBox>
       </div>
       {children}
     </Wrapper>
